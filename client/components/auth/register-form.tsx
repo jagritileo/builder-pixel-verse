@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { FloatingInput } from "@/components/ui/floating-input";
+import { FloatingPasswordInput } from "@/components/ui/floating-password-input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import MultiStepForm from "@/components/ui/multi-step-form";
-import { Eye, EyeOff, Mail, User, Lock, Sparkles, Check } from "lucide-react";
+import { Mail, User, Lock, Sparkles, Check } from "lucide-react";
 
 const steps = [
   {
@@ -27,7 +28,6 @@ const steps = [
 
 export default function RegisterForm() {
   const [currentStep, setCurrentStep] = useState(0);
-  const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -66,128 +66,56 @@ export default function RegisterForm() {
     switch (currentStep) {
       case 0:
         return (
-          <div className="space-y-4">
+          <div className="space-y-6">
             <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-2">
-                <Label
-                  htmlFor="firstName"
-                  className="text-sm font-medium text-foreground/80"
-                >
-                  First Name
-                </Label>
-                <div className="relative">
-                  <User className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
-                  <Input
-                    id="firstName"
-                    type="text"
-                    placeholder="John"
-                    value={formData.firstName}
-                    onChange={(e) =>
-                      handleInputChange("firstName", e.target.value)
-                    }
-                    className="pl-10 bg-background/50 border-border/50 focus:border-primary/50 focus:ring-primary/20"
-                  />
-                </div>
-              </div>
-              <div className="space-y-2">
-                <Label
-                  htmlFor="lastName"
-                  className="text-sm font-medium text-foreground/80"
-                >
-                  Last Name
-                </Label>
-                <Input
-                  id="lastName"
-                  type="text"
-                  placeholder="Doe"
-                  value={formData.lastName}
-                  onChange={(e) =>
-                    handleInputChange("lastName", e.target.value)
-                  }
-                  className="bg-background/50 border-border/50 focus:border-primary/50 focus:ring-primary/20"
-                />
-              </div>
+              <FloatingInput
+                id="firstName"
+                type="text"
+                label="First Name"
+                icon={<User className="h-4 w-4" />}
+                value={formData.firstName}
+                onChange={(e) => handleInputChange("firstName", e.target.value)}
+              />
+              <FloatingInput
+                id="lastName"
+                type="text"
+                label="Last Name"
+                value={formData.lastName}
+                onChange={(e) => handleInputChange("lastName", e.target.value)}
+              />
             </div>
           </div>
         );
 
       case 1:
         return (
-          <div className="space-y-4">
-            <div className="space-y-2">
-              <Label
-                htmlFor="email"
-                className="text-sm font-medium text-foreground/80"
-              >
-                Email Address
-              </Label>
-              <div className="relative">
-                <Mail className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="john@example.com"
-                  value={formData.email}
-                  onChange={(e) => handleInputChange("email", e.target.value)}
-                  className="pl-10 bg-background/50 border-border/50 focus:border-primary/50 focus:ring-primary/20"
-                />
-              </div>
-            </div>
+          <div className="space-y-6">
+            <FloatingInput
+              id="email"
+              type="email"
+              label="Email Address"
+              icon={<Mail className="h-4 w-4" />}
+              value={formData.email}
+              onChange={(e) => handleInputChange("email", e.target.value)}
+            />
 
-            <div className="space-y-2">
-              <Label
-                htmlFor="password"
-                className="text-sm font-medium text-foreground/80"
-              >
-                Password
-              </Label>
-              <div className="relative">
-                <Lock className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
-                <Input
-                  id="password"
-                  type={showPassword ? "text" : "password"}
-                  placeholder="••••••••"
-                  value={formData.password}
-                  onChange={(e) =>
-                    handleInputChange("password", e.target.value)
-                  }
-                  className="pl-10 pr-10 bg-background/50 border-border/50 focus:border-primary/50 focus:ring-primary/20"
-                />
-                <button
-                  type="button"
-                  onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-3 text-muted-foreground hover:text-foreground"
-                >
-                  {showPassword ? (
-                    <EyeOff className="h-4 w-4" />
-                  ) : (
-                    <Eye className="h-4 w-4" />
-                  )}
-                </button>
-              </div>
-            </div>
+            <FloatingPasswordInput
+              id="password"
+              label="Password"
+              icon={<Lock className="h-4 w-4" />}
+              value={formData.password}
+              onChange={(e) => handleInputChange("password", e.target.value)}
+            />
 
-            <div className="space-y-2">
-              <Label
-                htmlFor="confirmPassword"
-                className="text-sm font-medium text-foreground/80"
-              >
-                Confirm Password
-              </Label>
-              <div className="relative">
-                <Lock className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
-                <Input
-                  id="confirmPassword"
-                  type="password"
-                  placeholder="••••••••"
-                  value={formData.confirmPassword}
-                  onChange={(e) =>
-                    handleInputChange("confirmPassword", e.target.value)
-                  }
-                  className="pl-10 bg-background/50 border-border/50 focus:border-primary/50 focus:ring-primary/20"
-                />
-              </div>
-            </div>
+            <FloatingPasswordInput
+              id="confirmPassword"
+              label="Confirm Password"
+              icon={<Lock className="h-4 w-4" />}
+              value={formData.confirmPassword}
+              onChange={(e) =>
+                handleInputChange("confirmPassword", e.target.value)
+              }
+            />
 
             <div className="flex items-center space-x-2 pt-2">
               <Checkbox
