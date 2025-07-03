@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -24,6 +25,7 @@ export default function Navbar() {
           </Link>
 
           <div className="flex items-center space-x-4">
+            <ThemeToggle />
             {location.pathname !== "/register" && (
               <Link to="/register">
                 <Button className="bg-gradient-to-r from-primary to-purple-600 hover:from-primary/90 hover:to-purple-600/90 text-white font-medium px-6">

@@ -4,7 +4,7 @@ import RegisterForm from "@/components/auth/register-form";
 
 export default function Register() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background/95 to-primary/5">
+    <div className="min-h-screen bg-gradient-to-br from-background via-background/95 to-primary/5 transition-colors duration-300">
       <Navbar />
 
       <div className="pt-20 pb-12 px-6">
