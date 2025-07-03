@@ -36,9 +36,24 @@ export default function RegisterForm() {
     confirmPassword: "",
     agreeToTerms: false,
   });
+  const [errors, setErrors] = useState({
+    passwordMismatch: false,
+  });
 
   const handleInputChange = (field: string, value: string | boolean) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
+
+    // Validate password match in real-time
+    if (field === "password" || field === "confirmPassword") {
+      const newFormData = { ...formData, [field]: value };
+      const passwordsMatch =
+        newFormData.password === newFormData.confirmPassword;
+      setErrors((prev) => ({
+        ...prev,
+        passwordMismatch:
+          newFormData.confirmPassword.length > 0 && !passwordsMatch,
+      }));
+    }
   };
 
   const handleNext = () => {
@@ -55,6 +70,19 @@ export default function RegisterForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Validate passwords match before proceeding
+    if (currentStep === 1) {
+      const passwordsMatch = formData.password === formData.confirmPassword;
+      if (!passwordsMatch) {
+        setErrors((prev) => ({ ...prev, passwordMismatch: true }));
+        return;
+      }
+      if (!formData.agreeToTerms) {
+        return; // Don't proceed if terms not agreed
+      }
+    }
+
     if (currentStep === steps.length - 1) {
       console.log("Registration completed:", formData);
     } else {
@@ -107,15 +135,38 @@ export default function RegisterForm() {
               onChange={(e) => handleInputChange("password", e.target.value)}
             />
 
-            <FloatingPasswordInput
-              id="confirmPassword"
-              label="Confirm Password"
-              icon={<Lock className="h-4 w-4" />}
-              value={formData.confirmPassword}
-              onChange={(e) =>
-                handleInputChange("confirmPassword", e.target.value)
-              }
-            />
+            <div className="space-y-2">
+              <FloatingPasswordInput
+                id="confirmPassword"
+                label="Confirm Password"
+                icon={<Lock className="h-4 w-4" />}
+                value={formData.confirmPassword}
+                onChange={(e) =>
+                  handleInputChange("confirmPassword", e.target.value)
+                }
+                error={errors.passwordMismatch}
+              />
+              {errors.passwordMismatch && (
+                <motion.p
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="text-sm text-destructive flex items-center gap-1"
+                >
+                  <svg
+                    className="w-4 h-4"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  Passwords do not match
+                </motion.p>
+              )}
+            </div>
 
             <div className="flex items-center space-x-2 pt-2">
               <Checkbox
@@ -202,7 +253,15 @@ export default function RegisterForm() {
           {currentStep < steps.length - 1 ? (
             <Button
               type="submit"
-              className="flex-1 bg-gradient-to-r from-primary to-purple-600 hover:from-primary/90 hover:to-purple-600/90 text-white font-medium"
+              disabled={
+                currentStep === 1 &&
+                (errors.passwordMismatch ||
+                  !formData.agreeToTerms ||
+                  !formData.email ||
+                  !formData.password ||
+                  !formData.confirmPassword)
+              }
+              className="flex-1 bg-gradient-to-r from-primary to-purple-600 hover:from-primary/90 hover:to-purple-600/90 text-white font-medium disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {currentStep === 1 ? "Create Account" : "Continue"}
             </Button>

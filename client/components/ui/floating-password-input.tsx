@@ -6,12 +6,13 @@ export interface FloatingPasswordInputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string;
   icon?: React.ReactNode;
+  error?: boolean;
 }
 
 const FloatingPasswordInput = React.forwardRef<
   HTMLInputElement,
   FloatingPasswordInputProps
->(({ className, label, icon, ...props }, ref) => {
+>(({ className, label, icon, error, ...props }, ref) => {
   const [focused, setFocused] = React.useState(false);
   const [hasValue, setHasValue] = React.useState(false);
   const [showPassword, setShowPassword] = React.useState(false);
@@ -41,9 +42,12 @@ const FloatingPasswordInput = React.forwardRef<
       <input
         type={showPassword ? "text" : "password"}
         className={cn(
-          "flex h-12 w-full rounded-md border border-border/50 bg-background/50 px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/20 focus-visible:border-primary/50 disabled:cursor-not-allowed disabled:opacity-50 transition-all duration-200",
+          "flex h-12 w-full rounded-md border bg-background/50 px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-transparent focus-visible:outline-none focus-visible:ring-2 disabled:cursor-not-allowed disabled:opacity-50 transition-all duration-200",
           icon && "pl-10",
           "pr-10",
+          error
+            ? "border-destructive/50 focus-visible:ring-destructive/20 focus-visible:border-destructive/50"
+            : "border-border/50 focus-visible:ring-primary/20 focus-visible:border-primary/50",
           className,
         )}
         ref={ref}
@@ -76,7 +80,9 @@ const FloatingPasswordInput = React.forwardRef<
           "absolute text-sm text-muted-foreground transition-all duration-200 pointer-events-none",
           icon ? "left-10" : "left-3",
           shouldFloat
-            ? "top-0 -translate-y-1/2 bg-background px-1 text-xs text-primary font-medium"
+            ? `top-0 -translate-y-1/2 bg-background px-1 text-xs font-medium ${
+                error ? "text-destructive" : "text-primary"
+              }`
             : "top-3",
         )}
       >
