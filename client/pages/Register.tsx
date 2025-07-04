@@ -20,7 +20,7 @@ export default function Register() {
               <div className="space-y-4">
                 <h1 className="text-5xl font-bold leading-tight">
                   Join the{" "}
-                  <span className="bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-primary to-emerald-600 bg-clip-text text-transparent">
                     Future
                   </span>{" "}
                   of Innovation
@@ -56,7 +56,7 @@ export default function Register() {
                     transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
                     className="flex items-start space-x-4"
                   >
-                    <div className="w-8 h-8 bg-gradient-to-br from-primary to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                    <div className="w-8 h-8 bg-gradient-to-br from-primary to-emerald-600 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
                       <div className="w-2 h-2 bg-white rounded-full" />
                     </div>
                     <div>
@@ -75,14 +75,14 @@ export default function Register() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.8 }}
-                className="bg-gradient-to-r from-primary/10 to-purple-600/10 border border-primary/20 rounded-2xl p-6"
+                className="bg-gradient-to-r from-primary/10 to-emerald-600/10 border border-primary/20 rounded-2xl p-6"
               >
                 <div className="flex items-center space-x-4">
                   <div className="flex -space-x-2">
                     {[1, 2, 3].map((i) => (
                       <div
                         key={i}
-                        className="w-10 h-10 bg-gradient-to-br from-primary to-purple-600 rounded-full border-2 border-background flex items-center justify-center text-white text-sm font-medium"
+                        className="w-10 h-10 bg-gradient-to-br from-primary to-emerald-600 rounded-full border-2 border-background flex items-center justify-center text-white text-sm font-medium"
                       >
                         {i}
                       </div>
@@ -111,7 +111,7 @@ export default function Register() {
                 <div className="text-center mb-8 lg:hidden">
                   <h1 className="text-3xl font-bold mb-2">
                     Create Your{" "}
-                    <span className="bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
+                    <span className="bg-gradient-to-r from-primary to-emerald-600 bg-clip-text text-transparent">
                       Account
                     </span>
                   </h1>
