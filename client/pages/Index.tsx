@@ -14,7 +14,7 @@ export default function Index() {
       <section className="relative pt-32 pb-20 px-6 overflow-hidden">
         {/* Background Gradient */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute bg-gradient-to-br from-background/90 via-background/80 to-primary/20 -left-0.5 -top-1 right-0 bottom-0 w-[1202px]"></div>
+          <div className="absolute bg-gradient-to-br from-background/90 via-background/80 to-primary/20 inset-0"></div>
         </div>
 
         <div className="container mx-auto max-w-6xl text-center relative z-10">
