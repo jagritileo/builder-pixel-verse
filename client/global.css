@@ -104,6 +104,3 @@
     @apply bg-background text-foreground;
   }
 }
-.from-primary {
-  color: aqua;
-}
