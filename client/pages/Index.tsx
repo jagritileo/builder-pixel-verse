@@ -14,7 +14,7 @@ export default function Index() {
       <section className="relative pt-32 pb-20 px-6 overflow-hidden">
         {/* Background Gradient */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute bg-gradient-to-br from-background/90 via-background/80 to-primary/20 inset-0"></div>
+          <div className="absolute bg-gradient-to-br from-background/90 via-background/80 to-emerald-600/20 inset-0"></div>
         </div>
 
         <div className="container mx-auto max-w-6xl text-center relative z-10">
@@ -77,7 +77,7 @@ export default function Index() {
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Why Choose{" "}
-              <span className="bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-primary to-emerald-600 bg-clip-text text-transparent">
                 FusionApp
               </span>
             </h2>
@@ -116,7 +116,7 @@ export default function Index() {
                 viewport={{ once: true }}
                 className="bg-card/50 backdrop-blur-lg border border-border/50 rounded-2xl p-8 hover:bg-card/70 transition-colors group"
               >
-                <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-purple-600/20 rounded-2xl flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
+                <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-emerald-600/20 rounded-2xl flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
                   {feature.icon}
                 </div>
                 <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
@@ -137,7 +137,7 @@ export default function Index() {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-r from-primary/10 to-purple-600/10 border border-primary/20 rounded-3xl p-12 text-center"
+            className="bg-gradient-to-r from-primary/10 to-emerald-600/10 border border-primary/20 rounded-3xl p-12 text-center"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Ready to Get Started?
@@ -170,7 +170,7 @@ export default function Index() {
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               What Our{" "}
-              <span className="bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-primary to-emerald-600 bg-clip-text text-transparent">
                 Clients Say
               </span>
             </h2>
@@ -226,7 +226,7 @@ export default function Index() {
                 </div>
 
                 <div className="flex items-center">
-                  <div className="w-12 h-12 bg-gradient-to-br from-primary to-purple-600 rounded-full flex items-center justify-center text-white font-semibold text-sm mr-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary to-emerald-600 rounded-full flex items-center justify-center text-white font-semibold text-sm mr-4">
                     {testimonial.avatar}
                   </div>
                   <div>
@@ -263,7 +263,7 @@ export default function Index() {
               ].map((company) => (
                 <div
                   key={company}
-                  className="bg-gradient-to-r from-primary/20 to-purple-600/20 px-6 py-3 rounded-lg text-foreground/80 font-medium"
+                  className="bg-gradient-to-r from-primary/20 to-emerald-600/20 px-6 py-3 rounded-lg text-foreground/80 font-medium"
                 >
                   {company}
                 </div>

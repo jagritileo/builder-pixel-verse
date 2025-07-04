@@ -23,7 +23,7 @@ export default function Footer() {
           <div className="max-w-2xl mx-auto text-center">
             <h3 className="text-2xl md:text-3xl font-bold mb-4">
               Stay Updated with{" "}
-              <span className="bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-primary to-emerald-600 bg-clip-text text-transparent">
                 FusionApp
               </span>
             </h3>
@@ -52,10 +52,10 @@ export default function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center space-x-2 mb-6">
-              <div className="w-8 h-8 bg-gradient-to-br from-primary to-purple-600 rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-gradient-to-br from-primary to-emerald-600 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-sm">F</span>
               </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
+              <span className="text-xl font-bold bg-gradient-to-r from-primary to-emerald-600 bg-clip-text text-transparent">
                 FusionApp
               </span>
             </Link>
