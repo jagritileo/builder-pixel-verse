@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import {
   Twitter,
-  LinkedIn,
+  Linkedin,
   Github,
   Mail,
   Phone,
@@ -75,7 +75,7 @@ export default function Footer() {
                 href="#"
                 className="w-10 h-10 bg-muted hover:bg-primary hover:text-white rounded-lg flex items-center justify-center transition-colors"
               >
-                <LinkedIn className="h-4 w-4" />
+                <Linkedin className="h-4 w-4" />
               </a>
               <a
                 href="#"
