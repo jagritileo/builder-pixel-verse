@@ -161,6 +161,121 @@ export default function Index() {
           </motion.div>
         </div>
       </section>
+
+      {/* Testimonials Section */}
+      <section className="py-20 px-6 bg-gradient-to-br from-background/50 to-primary/5">
+        <div className="container mx-auto max-w-6xl">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              What Our{" "}
+              <span className="bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
+                Clients Say
+              </span>
+            </h2>
+            <p className="text-xl text-foreground/80 max-w-2xl mx-auto">
+              Don't just take our word for it. See what our amazing clients have
+              to say about their experience with FusionApp.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                quote:
+                  "FusionApp has completely transformed how we manage our projects. The intuitive interface and powerful features have increased our team's productivity by 300%.",
+                author: "Sarah Johnson",
+                role: "CEO at TechFlow",
+                avatar: "SJ",
+              },
+              {
+                quote:
+                  "The customer support is exceptional. Whenever we have questions, the team responds quickly with detailed solutions. It's like having experts on our team.",
+                author: "Michael Chen",
+                role: "Product Manager at InnovateX",
+                avatar: "MC",
+              },
+              {
+                quote:
+                  "We've tried many platforms, but FusionApp stands out with its seamless integrations and robust security. It's become essential to our daily operations.",
+                author: "Emily Rodriguez",
+                role: "CTO at StartupForge",
+                avatar: "ER",
+              },
+            ].map((testimonial, index) => (
+              <motion.div
+                key={testimonial.author}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-card/50 backdrop-blur-lg border border-border/50 rounded-2xl p-8 hover:bg-card/70 transition-colors group"
+              >
+                <div className="mb-6">
+                  <svg
+                    className="w-8 h-8 text-primary/60 mb-4"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z" />
+                  </svg>
+                  <p className="text-foreground/90 leading-relaxed mb-6">
+                    "{testimonial.quote}"
+                  </p>
+                </div>
+
+                <div className="flex items-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary to-purple-600 rounded-full flex items-center justify-center text-white font-semibold text-sm mr-4">
+                    {testimonial.avatar}
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-foreground">
+                      {testimonial.author}
+                    </h4>
+                    <p className="text-sm text-foreground/60">
+                      {testimonial.role}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Trust Indicators */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="mt-16 text-center"
+          >
+            <p className="text-sm text-foreground/60 mb-8">
+              Trusted by 10,000+ companies worldwide
+            </p>
+            <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
+              {[
+                "TechFlow",
+                "InnovateX",
+                "StartupForge",
+                "GlobalCorp",
+                "NextGen",
+              ].map((company) => (
+                <div
+                  key={company}
+                  className="bg-gradient-to-r from-primary/20 to-purple-600/20 px-6 py-3 rounded-lg text-foreground/80 font-medium"
+                >
+                  {company}
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
     </div>
   );
 }
