@@ -28,7 +28,7 @@ export default function MultiStepForm({
               <motion.div
                 className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-medium ${
                   index <= currentStep
-                    ? "bg-gradient-to-r from-primary to-purple-600 text-white"
+                    ? "bg-gradient-to-r from-primary to-emerald-600 text-white"
                     : "bg-muted text-muted-foreground"
                 }`}
                 initial={{ scale: 0.8, opacity: 0.5 }}
@@ -44,7 +44,7 @@ export default function MultiStepForm({
                 <div
                   className={`w-20 h-0.5 mx-2 ${
                     index < currentStep
-                      ? "bg-gradient-to-r from-primary to-purple-600"
+                      ? "bg-gradient-to-r from-primary to-emerald-600"
                       : "bg-muted"
                   }`}
                 />

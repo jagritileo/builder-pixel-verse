@@ -345,7 +345,7 @@ export default function MegaMenu({
 
                 {/* Featured Content - 3 columns */}
                 <div className="col-span-3">
-                  <div className="bg-gradient-to-br from-primary/5 to-purple-600/5 border border-primary/20 rounded-xl p-6">
+                  <div className="bg-gradient-to-br from-primary/5 to-emerald-600/5 border border-primary/20 rounded-xl p-6">
                     <div className="mb-4">
                       <img
                         src={currentMenu.featured.image}

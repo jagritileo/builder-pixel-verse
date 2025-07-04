@@ -200,7 +200,7 @@ export default function RegisterForm() {
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-              className="w-20 h-20 bg-gradient-to-br from-primary to-purple-600 rounded-full flex items-center justify-center mx-auto"
+              className="w-20 h-20 bg-gradient-to-br from-primary to-emerald-600 rounded-full flex items-center justify-center mx-auto"
             >
               <Check className="h-10 w-10 text-white" />
             </motion.div>
@@ -215,7 +215,7 @@ export default function RegisterForm() {
               </p>
             </div>
 
-            <div className="bg-gradient-to-r from-primary/10 to-purple-600/10 border border-primary/20 rounded-lg p-4">
+            <div className="bg-gradient-to-r from-primary/10 to-emerald-600/10 border border-primary/20 rounded-lg p-4">
               <div className="flex items-center justify-center space-x-2 text-primary mb-2">
                 <Sparkles className="h-4 w-4" />
                 <span className="text-sm font-medium">Pro Tip</span>
