@@ -261,7 +261,7 @@ export default function RegisterForm() {
                   !formData.password ||
                   !formData.confirmPassword)
               }
-              className="flex-1 bg-gradient-to-r from-primary to-purple-600 hover:from-primary/90 hover:to-purple-600/90 text-white font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+              className="flex-1 bg-primary hover:bg-primary/90 text-white font-medium disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {currentStep === 1 ? "Create Account" : "Continue"}
             </Button>
@@ -269,7 +269,7 @@ export default function RegisterForm() {
             <Button
               type="button"
               onClick={() => (window.location.href = "/")}
-              className="w-full bg-gradient-to-r from-primary to-purple-600 hover:from-primary/90 hover:to-purple-600/90 text-white font-medium"
+              className="w-full bg-primary hover:bg-primary/90 text-white font-medium"
             >
               Get Started
             </Button>

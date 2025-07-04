@@ -46,7 +46,7 @@ export default function Index() {
               <Link to="/register">
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-primary to-purple-600 hover:from-primary/90 hover:to-purple-600/90 text-white font-medium px-8 py-3 text-lg group"
+                  className="bg-primary hover:bg-primary/90 text-white font-medium px-8 py-3 text-lg group"
                 >
                   Get Started Free
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -149,7 +149,7 @@ export default function Index() {
             <Link to="/register">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-primary to-purple-600 hover:from-primary/90 hover:to-purple-600/90 text-white font-medium px-12 py-4 text-lg"
+                className="bg-primary hover:bg-primary/90 text-white font-medium px-12 py-4 text-lg"
               >
                 Start Your Journey
               </Button>

@@ -37,7 +37,7 @@ export default function Footer() {
                 placeholder="Enter your email"
                 className="flex-1"
               />
-              <Button className="bg-gradient-to-r from-primary to-purple-600 hover:from-primary/90 hover:to-purple-600/90 text-white">
+              <Button className="bg-primary hover:bg-primary/90 text-white">
                 Subscribe
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>

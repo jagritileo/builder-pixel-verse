@@ -118,7 +118,7 @@ export default function Navbar() {
               <ThemeToggle />
               {location.pathname !== "/register" && (
                 <Link to="/register" onClick={closeMegaMenu}>
-                  <Button className="bg-gradient-to-r from-primary to-purple-600 hover:from-primary/90 hover:to-purple-600/90 text-white font-medium px-6">
+                  <Button className="bg-primary hover:bg-primary/90 text-white font-medium px-6">
                     Get Started
                   </Button>
                 </Link>
