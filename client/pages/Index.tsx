@@ -12,14 +12,9 @@ export default function Index() {
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-6 overflow-hidden">
-        {/* Background Image */}
+        {/* Background Gradient */}
         <div className="absolute inset-0 z-0">
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets%2F2867204872b442768b8aef9d286536e0%2F288d5b322d2c4b7ba28b3eacc2ff9d82?format=webp&width=800"
-            alt=""
-            className="w-full h-full object-cover opacity-10"
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-background/80 to-primary/20"></div>
+          <div className="absolute bg-gradient-to-br from-background/90 via-background/80 to-primary/20 -left-0.5 -top-1 right-0 bottom-0 w-[1208px]"></div>
         </div>
 
         <div className="container mx-auto max-w-6xl text-center relative z-10">
@@ -136,7 +131,7 @@ export default function Index() {
 
       {/* CTA Section */}
       <section className="py-20 px-6">
-        <div className="container mx-auto max-w-4xl">
+        <div className="container mx-auto max-w-[1167px]">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
